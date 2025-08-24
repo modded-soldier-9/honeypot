@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Design System - Enhanced Honeypot Theme */
+
+@layer base {
+  :root {
+    /* Core Colors - Modern Dark Theme */
+    --background: 222 84% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 84% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 84% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 45 93% 65%;
+    --primary-foreground: 222 84% 4%;
+
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 25% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 38 95% 55%;
+    --accent-foreground: 222 84% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 12%;
+    --ring: 45 93% 65%;
+
+    --warning: 50 100% 60%;
+    --warning-foreground: 222 84% 4%;
+    
+    /* Enhanced Honey Theme */
+    --honey-primary: 45 93% 65%;
+    --honey-secondary: 38 95% 55%;
+    --honey-accent: 50 85% 75%;
+    --honey-dark: 30 60% 35%;
+    --honey-glow: 45 100% 70%;
+    --honey-gold: 42 100% 50%;
+    --honey-amber: 35 100% 60%;
+    
+    /* Modern Gradients */
+    --gradient-honey: linear-gradient(135deg, hsl(45 93% 65%), hsl(38 95% 55%));
+    --gradient-honey-gold: linear-gradient(135deg, hsl(45 93% 65%), hsl(42 100% 50%));
+    --gradient-honey-dark: linear-gradient(135deg, hsl(30 60% 35%), hsl(25 50% 25%));
+    --gradient-background: linear-gradient(180deg, hsl(222 84% 4%), hsl(222 84% 6%));
+    --gradient-card: linear-gradient(145deg, hsl(222 84% 6%), hsl(222 84% 8%));
+    
+    /* Enhanced Shadows */
+    --shadow-honey: 0 10px 30px -10px hsl(45 93% 65% / 0.3);
+    --shadow-honey-glow: 0 0 40px hsl(45 100% 70% / 0.4);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.12);
+    --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.15);
+    --shadow-inset: inset 0 1px 0 hsl(215 25% 20%);
+
+    --radius: 0.75rem;
+
+    /* Sidebar Colors */
+    --sidebar-background: 222 84% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 45 93% 65%;
+    --sidebar-primary-foreground: 222 84% 4%;
+    --sidebar-accent: 215 25% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 25% 20%;
+    --sidebar-ring: 45 93% 65%;
+  }
+
+  .dark {
+    --background: 222 84% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 84% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 84% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 45 93% 65%;
+    --primary-foreground: 222 84% 4%;
+
+    --secondary: 215 25% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 25% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 38 95% 55%;
+    --accent-foreground: 222 84% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 12%;
+    --ring: 45 93% 65%;
+    
+    --sidebar-background: 222 84% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 45 93% 65%;
+    --sidebar-primary-foreground: 222 84% 4%;
+    --sidebar-accent: 215 25% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 25% 20%;
+    --sidebar-ring: 45 93% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-background);
+    min-height: 100vh;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--honey-primary) / 0.3);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--honey-primary) / 0.5);
+  }
+
+  /* Selection */
+  ::selection {
+    background: hsl(var(--honey-primary) / 0.2);
+    color: hsl(var(--honey-primary));
+  }
+}
+
+@layer components {
+  /* Glass Effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Honey Glow Effects */
+  .honey-glow {
+    box-shadow: var(--shadow-honey-glow);
+  }
+
+  .honey-glow-text {
+    text-shadow: 0 0 20px hsl(var(--honey-primary) / 0.5);
+  }
+
+  /* Animated Background */
+  .animated-bg {
+    background: linear-gradient(-45deg, hsl(var(--honey-primary) / 0.1), hsl(var(--honey-secondary) / 0.1), hsl(var(--honey-accent) / 0.1), hsl(var(--honey-primary) / 0.1));
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Card Enhancements */
+  .card-modern {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-modern:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-2px);
+  }
+
+  /* Button Enhancements */
+  .btn-honey {
+    background: var(--gradient-honey);
+    border: none;
+    color: hsl(var(--primary-foreground));
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-honey::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-honey:hover::before {
+    left: 100%;
+  }
+
+  .btn-honey:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-honey);
+  }
+
+  /* Loading Animation */
+  .loading-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* Fade In Animation */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Slide In Animation */
+  .slide-in {
+    animation: slideIn 0.5s ease-out;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+}
